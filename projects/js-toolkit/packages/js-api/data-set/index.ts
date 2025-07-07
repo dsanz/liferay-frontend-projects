@@ -38,8 +38,18 @@ export interface FDSFilterDescriptionBuilder<T> {
 	(selectedData: T): string;
 }
 
+export interface FDSFilterPreloadedDataBuilderArgs<T> {
+	fieldName: string;
+	filter: FDSFilterData<T>;
+}
+
+export interface FDSFilterPreloadedDataBuilder<T> {
+	(args: FDSFilterPreloadedDataBuilderArgs<T>): T;
+}
+
 export interface FDSFilter<T> {
 	descriptionBuilder: FDSFilterDescriptionBuilder<T>;
 	htmlElementBuilder: FDSFilterHTMLElementBuilder<T>;
 	oDataQueryBuilder: FDSFilterODataQueryBuilder<T>;
+	preloadedDataBuilder?: FDSFilterPreloadedDataBuilder<T>;
 }
