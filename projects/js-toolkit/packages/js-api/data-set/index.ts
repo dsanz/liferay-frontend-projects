@@ -18,24 +18,18 @@
  * description builders for human-readable filter summaries.
  */
 
-// Frontend data set state
-
-export interface FDSFilterState {
-	active?: boolean;
-	id: string;
-	odataFilterString?: string;
-	selectedData?: Record<string, unknown>;
-}
+// Frontend data set connection and remote state management
 
 export interface FDSState {
-	filters: Array<FDSFilterState>;
 	search: {query: string};
 }
 
-export {subscribeFilters} from './dataset-filters';
-export type {FiltersSubscription} from './dataset-filters';
-export {subscribeSearch} from './dataset-search';
-export type {SearchSubscription} from './dataset-search';
+export type {
+	FDSConnectionInfo,
+	FDSConnectionStatus,
+	FDSStateChangeCallback,
+} from './FDSConnection';
+export {FDSConnection} from './FDSConnection';
 
 // Frontend data set cell renderer
 
