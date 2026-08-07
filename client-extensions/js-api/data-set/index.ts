@@ -17,10 +17,10 @@
  * - `./connection` — FDS connection and remote state: `FDSConnection`
  *   (and its companion `FDSConnectionConstructor`) let a Client Extension
  *   read and write FDS search state and take its filtering over with
- *   `FDSConnectionFilter` expressions, while `FDSConnectionInfo`,
- *   `FDSConnectionStatus`, `FDSConnectionOptions`, and
- *   `FDSStateChangeCallback` describe how a connection is opened and
- *   observed.
+ *   `FDSConnectionFilter` expressions, informed by the `FDSFilterInfo` the
+ *   data set declares, while `FDSConnectionInfo`, `FDSConnectionStatus`,
+ *   `FDSConnectionOptions`, and `FDSStateChangeCallback` describe how a
+ *   connection is opened and observed.
  *
  * - `./cell-renderer` — custom cell renderers: the HTML element builder a
  *   renderer implements to draw a table cell.
@@ -43,6 +43,16 @@ export type {
 	FDSConnectionInfo,
 	FDSConnectionOptions,
 	FDSConnectionStatus,
+	FDSDateRangeFilterInfo,
+	FDSFilterDate,
+	FDSFilterDateBound,
+	FDSFilterDateSelection,
+	FDSFilterEntityFieldType,
+	FDSFilterInfo,
+	FDSSelectionFilterAutocomplete,
+	FDSSelectionFilterInfo,
+	FDSSelectionFilterItem,
+	FDSSelectionFilterSelection,
 	FDSState,
 	FDSStateChangeCallback,
 } from './connection';
