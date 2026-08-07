@@ -16,7 +16,8 @@
  *
  * - `./connection` — FDS connection and remote state: `FDSConnection`
  *   (and its companion `FDSConnectionConstructor`) let a Client Extension
- *   read and write FDS search state, while `FDSConnectionInfo`,
+ *   read and write FDS search state and take its filtering over with
+ *   `FDSConnectionFilter` expressions, while `FDSConnectionInfo`,
  *   `FDSConnectionStatus`, `FDSConnectionOptions`, and
  *   `FDSStateChangeCallback` describe how a connection is opened and
  *   observed.
@@ -38,6 +39,7 @@ export {FDSConnection} from './connection';
 
 export type {
 	FDSConnectionConstructor,
+	FDSConnectionFilter,
 	FDSConnectionInfo,
 	FDSConnectionOptions,
 	FDSConnectionStatus,
